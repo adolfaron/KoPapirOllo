@@ -3,7 +3,8 @@ h1, h2, h3{
     text-align: center;
 }
 img{
-    width: 20vw;
+    width: 200px ;
+    border: 5px solid #FFFFFF;
 }
 main{
     margin-inline: auto;
