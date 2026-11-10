@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
+    <main id="app">
         <h1>Kő - Papír - Olló</h1>
         <h2>Válassz!</h2>
         <div class="lehetosegek">
@@ -16,13 +16,15 @@
             <img src="img/ollo.png" alt="" id="ollo" onclick="kepkatt(3, this.id)">
         </div>
         <h2>Gép választása</h2>
-            <img src="img/ko.png" alt="">
-        <h1>Eredmény: Te nyertél!</h1>
+            <img id="gepValasztas" :src="gepMutat" alt="">
+        <h1>Eredmény: {{ eredmeny }}</h1>
         <h3>Te pontod</h3>
-        <h3 id="tePontod">1</h3>
+        <h3 id="tePontod">{{ jatekosPont }}</h3>
         <h3>Gép pontja</h3>
-        <h3 id="gepPontja">1</h3>
+        <h3 id="gepPontja">{{ gepPont }}</h3>
     </main>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
+    
 </body>
 </html>

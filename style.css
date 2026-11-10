@@ -5,6 +5,7 @@ h1, h2, h3{
 img{
     width: 200px ;
     border: 5px solid #FFFFFF;
+    border-radius: 10%;
 }
 main{
     margin-inline: auto;
