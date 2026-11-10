@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Kő - Papír - Olló</h1>
+        <h2>Válassz!</h2>
+        <div class="lehetosegek">
+            <img src="img/ko.png" alt="" id="ko" onclick="kepkatt(1, this.id)">
+            <img src="img/papir.png" alt="" id="papir" onclick="kepkatt(2, this.id)">
+            <img src="img/ollo.png" alt="" id="ollo" onclick="kepkatt(3, this.id)">
+        </div>
+        <h2>Gép választása</h2>
+            <img src="img/ko.png" alt="">
+        <h1>Eredmény: Te nyertél!</h1>
+        <h3>Te pontod</h3>
+        <h3 id="tePontod">1</h3>
+        <h3>Gép pontja</h3>
+        <h3 id="gepPontja">1</h3>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+h1, h2, h3{
+    color: #0AA21E;
+    text-align: center;
+}
+img{
+    width: 20vw;
+}
+main{
+    margin-inline: auto;
+    max-width: 800px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 15px 3px 8px #A8FBCA;
+    margin-inline: auto;
+    text-align: center;
+}
+#tePontod, #gepPontja{
+    color: #FF0001;
+}
+body{
+    background-color: #F8F8F8;
+}
+.lehetosegek{
+    margin-inline: auto;
+}
