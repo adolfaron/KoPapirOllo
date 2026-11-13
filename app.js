@@ -24,6 +24,7 @@ function kepkatt(kepId, id){
     frissit()
     
     
+    
 }
 
 const app = Vue.createApp({
