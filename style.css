@@ -1,3 +1,6 @@
+body, html{
+    background-color: #000000;
+}
 h1, h2, h3{
     color: #0AA21E;
     text-align: center;
@@ -9,7 +12,6 @@ img{
     transition: all .2s;
 }
 main{
-    margin-inline: auto;
     max-width: 800px;
     background-color: #FFFFFF;
     border-radius: 15px;
@@ -29,4 +31,23 @@ body{
 }
 .lehetosegek img:hover{
     border: 5px solid rgb(255, 145, 0)
+}
+input{
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 3px;
+    
+}
+button{
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 3px;
+    background-color: #FFFFFF;
+}
+form{
+    margin-inline: auto;
+    text-align: center;
+
 }
