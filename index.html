@@ -18,15 +18,16 @@
         <h2>Gép választása</h2>
             <img id="gepValasztas" :src="gepMutat" alt="">
         <h1>Eredmény: {{ eredmeny }}</h1>
-        <h3>Te pontod</h3>
+        <h3>{{ nev }} pontja</h3>
         <h3 id="tePontod">{{ jatekosPont }}</h3>
         <h3>Gép pontja</h3>
         <h3 id="gepPontja">{{ gepPont }}</h3>
+        <button type="button" id="ujrakezd" onclick="ujrakezd()">Újrakezdés</button>
     </main>
-    <form>
-        <input type="text" id="nevBe" placeholder="Felhasználónév"><br>
+    <form id="form">
+        <input type="text" id="nevBe" placeholder="Név"><br>
         <input type="email" id="emailBe" placeholder="E-Mail cím"><br>
-        <button onclick="belepes()">Belépés</button>
+        <button type="button" onclick="belepes();return">Belépés</button>
     </form>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
