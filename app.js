@@ -8,6 +8,7 @@ let kijott = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     if(nev == null || emailCim == null){
+        
         document.getElementById("app").style.display = "none";
     }
     else{
@@ -27,18 +28,18 @@ function belepes(){
     nev = document.getElementById("nevBe").value;
     if (emailCim == "" || nev == ""){
         console.log("rossz név")
-        kiir("hibás adatok");
+        kiir ="hibás adatok";
         return;
     }
     
     if (!/^\p{L}+$/u.test(nev)){
         console.log("nem csak betű")
-        kiir("A névba csak betűk lehetnek!");
+        kiir ="A névba csak betűk lehetnek!";
         return
     }
     if (nev.length < 8 || nev.length > 20){
         console.log("rossz név hossz")
-        kiir("nem megfelelő hosszúságú név (8-20)")
+        kiir ="nem megfelelő hosszúságú név (8-20)"
         return
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]/.test(emailCim)){
@@ -83,14 +84,13 @@ function kepkatt(kepId, id){
     frissit()
 }
 
-function kiir(szoveg){
-    document.getElementById("kiir").innerHTML = szoveg;
-}
+
 
 function ujrakezd(){
     kijott = false;
     jatekosPont = 0;
     gepPont = 0;
+    eredmeny = "";
     frissit()
     document.getElementById("ujrakezd").style.display = "none";
     let kepek = document.querySelectorAll(".lehetosegek img")
@@ -105,7 +105,8 @@ const app = Vue.createApp({
             gepPont: gepPont,
             gepMutat: gepMutat,
             eredmeny: eredmeny,
-            nev: nev
+            nev: nev,
+            kiir: kiir
         }
     },
 });
@@ -118,6 +119,7 @@ function frissit() {
         gepPont,
         gepMutat,
         eredmeny,
-        nev
+        nev,
+        kiir
     });
 }
