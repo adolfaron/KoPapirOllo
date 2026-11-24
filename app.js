@@ -4,6 +4,7 @@ let gepMutat = "img/ures.png";
 let eredmeny = "Válassz!";
 let nev; 
 let emailCim;
+let kijott = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     if(nev == null || emailCim == null){
@@ -26,18 +27,18 @@ function belepes(){
     nev = document.getElementById("nevBe").value;
     if (emailCim == "" || nev == ""){
         console.log("rossz név")
-        alert("hibás adatok");
+        kiir("hibás adatok");
         return;
     }
     
     if (!/^\p{L}+$/u.test(nev)){
         console.log("nem csak betű")
-        alert("A névba csak betűk lehetnek!");
+        kiir("A névba csak betűk lehetnek!");
         return
     }
     if (nev.length < 8 || nev.length > 20){
         console.log("rossz név hossz")
-        alert("nem megfelelő hosszúságú név (8-20)")
+        kiir("nem megfelelő hosszúságú név (8-20)")
         return
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]/.test(emailCim)){
@@ -50,6 +51,7 @@ function belepes(){
 }
 
 function kepkatt(kepId, id){
+    if (kijott) return;
     let kepek = document.querySelectorAll(".lehetosegek img")
     kepek.forEach(kep => {kep.style.border = ""})
     let kep = document.getElementById(id);
@@ -69,17 +71,24 @@ function kepkatt(kepId, id){
     } 
     let ujrakezd = document.getElementById("ujrakezd")
     if (jatekosPont >= 10){
+        kijott = true;
         eredmeny = nev+"nyerte a játékot!";
         ujrakezd.style.display = "block";
     }
     else if(gepPont >= 10){
+        kijott = true;  
         eredmeny = "A gép nyerte a jáátékot!";
         ujrakezd.style.display = "block";
     }
     frissit()
 }
 
+function kiir(szoveg){
+    document.getElementById("kiir").innerHTML = szoveg;
+}
+
 function ujrakezd(){
+    kijott = false;
     jatekosPont = 0;
     gepPont = 0;
     frissit()
