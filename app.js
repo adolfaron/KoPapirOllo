@@ -5,16 +5,16 @@ let eredmeny = "Válassz!";
 let nev; 
 let emailCim;
 let kijott = false;
+let kiir = "";
 
 document.addEventListener("DOMContentLoaded", () => {
     if(nev == null || emailCim == null){
-        
         document.getElementById("app").style.display = "none";
     }
     else{
-        frissit();
         document.getElementById("form").style.display = "none";
     }
+    frissit();
 
 })
 
@@ -29,17 +29,20 @@ function belepes(){
     if (emailCim == "" || nev == ""){
         console.log("rossz név")
         kiir ="hibás adatok";
+        frissit();
         return;
     }
     
     if (!/^\p{L}+$/u.test(nev)){
         console.log("nem csak betű")
         kiir ="A névba csak betűk lehetnek!";
+        frissit();
         return
     }
     if (nev.length < 8 || nev.length > 20){
         console.log("rossz név hossz")
         kiir ="nem megfelelő hosszúságú név (8-20)"
+        frissit();
         return
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]/.test(emailCim)){
@@ -111,7 +114,7 @@ const app = Vue.createApp({
     },
 });
 
-const vm = app.mount("#app");
+const vm = app.mount("#egesz");
 
 function frissit() {
     Object.assign(vm, {
