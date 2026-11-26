@@ -28,7 +28,7 @@ function belepes(){
     nev = document.getElementById("nevBe").value;
     if (emailCim == "" || nev == ""){
         console.log("rossz név")
-        kiir ="hibás adatok";
+        kiir ="Név és E-mail cím megadása kötelező!";
         frissit();
         return;
     }
